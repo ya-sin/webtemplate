@@ -16,6 +16,9 @@
 @include topic--black();
 
 .news {
+  &__briefings{
+
+  }
   grid-column: {
     start: 1;
     end: 7;
@@ -46,9 +49,12 @@
 }
 
 .hotnews {
+  &__topic{
+    font-size: .75rem;
+  }
+
   &__briefings {
     font-size: .625rem;
-    border-bottom: 1px solid black;
     margin: 1rem 0;
   }
 
