@@ -62,11 +62,13 @@
         font-size: .5rem;
         min-width: 3rem;
         grid-area: briefing__title;
+        text-overflow: ellipsis;
       }
 
       &__article {
         overflow: hidden;
         grid-area: briefing__article;
+        text-overflow: ellipsis;
       }
 
       &__time {
