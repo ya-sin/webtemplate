@@ -1,0 +1,131 @@
+@import 'components/common/icon';
+@import 'components/announcement/filter__tags';
+
+.announcement {
+  &__title {
+    height: 1.35rem;
+    margin-bottom: .3rem;
+
+    &--flag {
+      @include icon--before__flag() {
+        margin: .15rem .5rem .2rem 0;
+      }
+    }
+
+    &--underline {
+      border-bottom: solid .0156rem rgba( 0, 0, 0, .3 );
+    }
+  }
+
+  &__briefings {
+    font-size: .625rem;
+  }
+
+  &__button {
+    width: 4.625rem;
+    height: 1.5rem;
+    border-radius: 3px;
+    background-color: #f94970;
+    box-shadow: 0 .0625rem .0625rem 0 rgba(244, 67, 54, .14);
+    float: right;
+    margin-top: 1rem;
+    font-family: Roboto;
+    color: white;
+    font-size: .4375rem;
+  }
+
+  .title {
+    display: flex;
+
+    &__text {
+      height: inherit;
+      font: {
+        weight: bold;
+        size: .75rem;
+      }
+
+      &--underline {
+        width: 3.43rem;
+        border-bottom: solid .0156rem #000000;
+      }
+    }
+  }
+
+  
+  .briefings {
+    &__briefing {
+      font-size: .4375rem;
+      padding: .9rem .2rem .2rem;
+      border-bottom: solid .0156rem rgba( 0, 0, 0, .3 );
+    
+    }
+
+    .briefing:hover {
+      cursor: pointer;
+      box-shadow: 0 0 .1rem rgba(0, 0, 0, .1),0 0 .2rem rgba(0, 0, 0, .1);
+    }
+
+    .briefing {
+      %overflow-property {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      display: grid;
+      grid: {
+        template: {
+          areas:
+            'briefing__tags     .  .'
+            'briefing__title    .  .'
+            'briefing__article  . briefing__time';
+          rows: 2fr 1fr 1.6fr;
+          columns: 6.5fr 1fr 2.5fr;
+        }
+      }
+
+      &__tags {
+        grid-area: briefing__tags;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+        width: inherit;
+        max-height: 200px;
+        background-color: #f2f4f7;
+        background-repeat: no-repeat;
+        background-image:
+          linear-gradient(to right, #f2f4f7, #f2f4f7),
+          linear-gradient(to right, #f2f4f7, #f2f4f7),
+          linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
+          linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));   
+        background-position: left center, right center, left center, right center;
+        background-size: .25rem 100%, .25rem 100%, .25rem 100%, .25rem 100%;
+        background-attachment: local, local, scroll, scroll;
+      }
+
+
+      
+      
+      &__title {
+        grid-area: briefing__title;
+        color: #000000;
+        font-size: .5rem;
+        min-width: 3rem;
+        overflow: hidden;
+        @extend %overflow-property;
+      }
+
+      &__article {
+        grid-area: briefing__article;
+        overflow: hidden;
+        @extend %overflow-property;
+      }
+
+      &__time {
+        grid-area: briefing__time;
+        display: flex;
+        justify-content: flex-end;
+        color: #b5babf;
+      }
+    }
+  }
+}

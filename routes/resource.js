@@ -1,32 +1,30 @@
-// router for resource pages
-
+// Router for /resource
 const express = require( 'express' );
 const router = express.Router();
 
-// route to resource/law
-router.get( '/law', function( req, res ) {
-    res.render( 'resource/law' );
+// Resolve URL resource/law
+router.get( '/law', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/resource/law.${ req.query.language }.html` );
 } );
 
-// route to resource/rent
-router.get( '/rent', function( req, res ) {
-    res.render( 'resource/rent' );
+// Resolve URL resource/rent
+router.get( '/rent', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/resource/rent.${ req.query.language }.html` );
 } );
 
-// route to resource/fix
-router.get( '/fix', function( req, res ) {
-    res.render( 'resource/fix' );
+// Resolve URL resource/fix
+router.get( '/fix', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/resource/fix.${ req.query.language }.html` );
 } );
 
-// route to resource/ieet
-router.get( '/ieet', function( req, res ) {
-    res.render( 'resource/ieet' );
+// Resolve URL resource/ieet
+router.get( '/ieet', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/resource/ieet.${ req.query.language }.html` );
 } );
 
-// route to resource/law
-router.get( '/resources', function( req, res ) {
-    res.render( 'resource/resources' );
+// Resolve URL resource/law
+router.get( '/resources', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/resource/resources.${ req.query.language }.html` );
 } );
-
 
 module.exports = router;

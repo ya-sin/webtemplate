@@ -1,0 +1,43 @@
+@import 'components/common/reset';
+@import 'components/common/topic';
+@import 'components/about/teachers/card';
+
+// block
+// `.main`
+@include topic--white();
+
+.main {
+  // block [skin]
+  width: 100%;
+  background-color: rgb( 51, 60, 78 );
+
+  // block [layout]
+  display: grid;
+  grid: {
+    template: {
+      areas:
+        '.   .   .'
+        '. topic .'
+        '. cards .'
+        '.   .   .';
+      columns: 10% 1fr 10%;
+    }
+    row-gap: 2rem;
+  };
+
+  // block
+  // `.main .topic`
+
+  .topic {
+    // element [position]
+    grid-area: topic;
+  }
+
+  // block
+  // `.main .cards`
+
+  .cards {
+    // element [position]
+    grid-area: cards;
+  }
+}

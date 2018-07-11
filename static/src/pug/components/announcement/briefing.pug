@@ -1,0 +1,9 @@
+mixin briefings__briefing( briefing )
+  article.briefings__briefing.briefing( href=briefing.articleUrl )
+    aside.tags.briefing__tags.scrollbox
+      each tag in briefing.tags
+        button.tags__tag( class=`tags__tag--${ tag }` )
+          a= tag
+    h1.briefing__title= briefing.title
+    p.briefing__article= briefing.excerpt
+    time.briefing__time= briefing.time

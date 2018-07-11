@@ -1,30 +1,30 @@
-// router for /research
+// Router for /research
 const express = require( 'express' );
 const router = express.Router();
 
-// route to /research/labs
-router.get( '/labs', function( req, res ) {
-    res.render( 'research/labs' );
+// Resolve URL /research/labs
+router.get( '/labs', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/research/labs.${ req.query.language }.html` );
 } );
 
-// route to /research/groups
-router.get( '/groups', function( req, res ) {
-    res.render( 'research/groups' );
+// Resolve URL /research/groups
+router.get( '/groups', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/research/groups.${ req.query.language }.html` );
 } );
 
-// route to /research/publications
-router.get( '/publications', function( req, res ) {
-    res.render( 'research/publications' );
+// Resolve URL /research/publications
+router.get( '/publications', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/research/publications.${ req.query.language }.html` );
 } );
 
-// route to /research/awards
-router.get( '/awards', function( req, res ) {
-    res.render( 'research/awards' );
+// Resolve URL /research/awards
+router.get( '/awards', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/research/awards.${ req.query.language }.html` );
 } );
 
-// route to /research/conferences
-router.get( '/conferences', function( req, res ) {
-    res.render( 'research/conferences' );
+// Resolve URL /research/conferences
+router.get( '/conferences', ( req, res ) => {
+    res.sendFile( `${ global.projectRoot }/static/dist/html/research/conferences.${ req.query.language }.html` );
 } );
 
 module.exports = router;

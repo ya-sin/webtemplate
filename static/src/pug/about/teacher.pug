@@ -1,0 +1,10 @@
+extends /layouts/about.pug
+
+block append stylesheets
+
+block content
+  include /components/about/teacher/profile.pug
+  main.main
+
+block append scripts
+  +js( 'about/teacher/get-teacher-profile' )

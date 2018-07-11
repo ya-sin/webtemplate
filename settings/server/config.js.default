@@ -1,0 +1,39 @@
+/**
+ * Web server settings
+ * @namespace
+ * @readonly {string} host      - Web server host address.
+ * @readonly {string} protocol  - Whick protocol web server is using, can be either 'http' or 'https'.
+ * @readonly {number} port      - Web server port.
+ * @readonly {string} url       - Get web server url.
+ * @readonly {string} staticUrl - Get static file server url.
+ */
+
+const config = {};
+
+Object.defineProperties( config, {
+    'host': {
+        value: 'localhost',
+    },
+    'protocol': {
+        value: 'http',
+    },
+    'port': {
+        value: 3000,
+    },
+    'url': {
+        get () {
+            return `${ config.protocol }://${ config.host }${
+                config.port === '80' || config.port === '443' ?
+                    '' :
+                    `:${ config.port }`
+            }`;
+        },
+    },
+    'staticUrl': {
+        get () {
+            return config.url;
+        },
+    },
+} );
+
+module.exports = config;

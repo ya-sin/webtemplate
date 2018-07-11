@@ -1,0 +1,20 @@
+@import 'components/announcement/filter__tags';
+@import 'components/announcement/filter__time';
+
+.filter {
+  display: grid;
+  grid-template: {
+    columns:  12.3fr 1fr 5.7fr;
+    areas: 'filter__tags . filter__time';
+  }
+  margin-bottom: 1rem;
+
+  &__tags {
+    grid-area: filter__tags;
+  }
+
+  &__time {
+    grid-area: filter__time;
+  }
+}
+
